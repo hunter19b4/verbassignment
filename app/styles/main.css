@@ -1,0 +1,27 @@
+/* 
+    Created on : Aug 10, 2016, 2:25:00 PM
+    Author     : Hunter19b4
+*/
+body, html {
+    margin-top: 30px;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+    .thumbnail:hover {
+        background-color: #5CB85C;
+    }
+
+.votes {
+    font-size: 47px;
+    color: #197BB5;
+    padding: 10px;
+}
+
+.thumbnail img {
+    width: 100%;
+}

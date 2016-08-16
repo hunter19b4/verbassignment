@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Verb Article Assignment - Add New Article</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+        <link href="styles/main.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <h2>Add Article</h2>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <form action="/api/articles" method="post">
+                        <div class="form-group">
+                            <label for="inputArticleTitle">Article Title</label>
+                            <input type="text" class="form-control" id="inputArticleTitle" name="article_title" placeholder="Article Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputArticleBody">Article Body</label>
+                            <textarea class="form-control" id="inputArticleBody" name="article_content" placeholder="Write new article here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Add Article</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

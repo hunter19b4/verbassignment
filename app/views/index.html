@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Verb Article Assignment</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+        <link href="styles/main.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="verbArticles">
+        <div class="container">
+            <div class="row">
+                <h2>Verb Articles</h2>
+            </div>
+            <hr />
+        </div>
+        <div class="container" ng-controller="displayArticlesCtrl">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="article in articles">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/600x270" alt="">
+                        <div class="caption">
+                            <h4 class="text-center">{{ article.title }}</h4>
+                            <p>{{ article.content }}</p>
+                            <p class="text-center">
+                                <i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    var app = angular.module('verbArticles', []);
+                    app.controller('displayArticlesCtrl', function($scope, $http) {
+                        $http.get("/json/articles.json").then(function (response) {
+                            $scope.articles = response.data;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
